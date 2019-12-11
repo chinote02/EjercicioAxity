@@ -1,0 +1,46 @@
+﻿@model UI.Models.BLL.Products
+
+<h2>Productos</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading header-register">
+                    <h2>Resultados</h2>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>SKU</th>
+                                <th>Descripción</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (var p in ((List<UI.Models.DTO.Products>)ViewBag.ProductList))
+                            {
+                                <tr>
+                                    <td>@p.id</td>
+                                    <td>@p.Name</td>
+                                    <td>@p.Sku</td>
+                                    <td>@p.Description</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
